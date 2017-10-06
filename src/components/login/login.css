@@ -1,0 +1,35 @@
+
+.login-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-field {
+  width: 100%;
+  border: solid thin #333;
+  margin: 5px 0 5px 0;
+  padding: 6px;
+}
+
+.text-field:active {
+  border-color: #0176d8
+}
+
+.hidden-form {
+  opacity: 0;
+  max-height: 0px;
+  transition: opacity 1s, max-height 1s;
+}
+
+.displayed-form {
+  opacity: 100;
+  max-height: 500px;
+  overflow: hidden;
+  transition: opacity 1s, max-height 1s;
+}
+
+.button-container{
+  text-align: center;
+}
