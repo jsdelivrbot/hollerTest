@@ -33,3 +33,7 @@
 .button-container{
   text-align: center;
 }
+
+.validation-feedback {
+  color: red;
+}
