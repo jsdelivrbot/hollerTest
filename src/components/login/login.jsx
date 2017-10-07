@@ -26,37 +26,6 @@ export default class Login extends React.Component {
     this.setState({ [origin]: value });
   }
 
-  _loginForm() {
-    return (
-      <div className={this.state.displayForm ? 'displayed-form' : 'hidden-form'}>
-        <input
-          type={this.state.displayForm ? 'text' : 'hidden'}
-          placeholder="Username"
-          className="text-field"
-          value={this.state.username}
-          onChange={e => this._handleChange(e.target.value, 'username')}
-        />
-        <div className={this.state.usernameError ? 'validation-feedback' : 'hidden'}>
-          <em>{this.state.usernameError}</em>
-        </div>
-        <input
-          type={this.state.displayForm ? 'password' : 'hidden'}
-          placeholder="Password"
-          className="text-field"
-          value={this.state.password}
-          onChange={e => this._handleChange(e.target.value, 'password')}
-        />
-        <div className={this.state.passwordError ? 'validation-feedback' : 'hidden'}>
-          <em>{this.state.passwordError}</em>
-        </div>
-        <div className={this.state.formIsValid ? 'success-feedback' : 'validation-feedback'}>
-          <em>{this.state.formFeedback}</em>
-        </div>
-
-      </div>
-    );
-  }
-
   _submitLoginForm() {
     // 500ms timer to simulate API call
     this._resetFormFeedback();
@@ -140,6 +109,47 @@ export default class Login extends React.Component {
       this._submitLoginForm();
     }
   }
+
+  _enterPressed(event) {
+    const code = event.keyCode || event.which;
+    if (code === 13) { //  13 is the enter keycode
+      this._submitLoginForm();
+    }
+  }
+
+  _loginForm() {
+    return (
+      <div className={this.state.displayForm ? 'displayed-form' : 'hidden-form'}>
+        <input
+          type={this.state.displayForm ? 'text' : 'hidden'}
+          placeholder="Username"
+          className="text-field"
+          value={this.state.username}
+          onChange={e => this._handleChange(e.target.value, 'username')}
+          onKeyPress={e => this._enterPressed(e)}
+        />
+        <div className={this.state.usernameError ? 'validation-feedback' : 'hidden'}>
+          <em>{this.state.usernameError}</em>
+        </div>
+        <input
+          type={this.state.displayForm ? 'password' : 'hidden'}
+          placeholder="Password"
+          className="text-field"
+          value={this.state.password}
+          onChange={e => this._handleChange(e.target.value, 'password')}
+          onKeyPress={e => this._enterPressed(e)}
+        />
+        <div className={this.state.passwordError ? 'validation-feedback' : 'hidden'}>
+          <em>{this.state.passwordError}</em>
+        </div>
+        <div className={this.state.formIsValid ? 'success-feedback' : 'validation-feedback'}>
+          <em>{this.state.formFeedback}</em>
+        </div>
+
+      </div>
+    );
+  }
+
 
   render() {
     return (

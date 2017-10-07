@@ -1,13 +1,13 @@
 {
-  "name": "base-redux-project",
+  "name": "holler-frontend-technical-test",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "This project is the frontend technical test for Holler to review",
   "main": "index.jsx",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "lint": "./node_modules/.bin/eslint ./src/**/*.jsx"
   },
-  "author": "",
+  "author": "William Dunlop",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.2.1",
