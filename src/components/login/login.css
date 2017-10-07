@@ -37,3 +37,7 @@
 .validation-feedback {
   color: red;
 }
+
+.success-feedback {
+  color: green;
+}
