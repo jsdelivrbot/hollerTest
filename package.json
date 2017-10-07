@@ -2,9 +2,10 @@
   "name": "base-redux-project",
   "version": "1.0.0",
   "description": "Simple starter package for Redux with React and Babel support",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "lint": "./node_modules/.bin/eslint ./src/**/*.jsx"
   },
   "author": "",
   "license": "ISC",

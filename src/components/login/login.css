@@ -2,6 +2,10 @@ body {
   background: #ddd;
 }
 
+/*h3 {
+  color: #ddd
+}*/
+
 .login-container {
   position: fixed;
   top: 50%;

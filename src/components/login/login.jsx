@@ -40,7 +40,7 @@ export default class Login extends React.Component {
           <em>{this.state.usernameError}</em>
         </div>
         <input
-          type={this.state.displayForm ? 'text' : 'hidden'}
+          type={this.state.displayForm ? 'password' : 'hidden'}
           placeholder="Password"
           className="text-field"
           value={this.state.password}
@@ -58,10 +58,10 @@ export default class Login extends React.Component {
   }
 
   _submitLoginForm() {
-    this.setState({ loading: true });
     // 500ms timer to simulate API call
+    this._resetFormFeedback();
     setTimeout(() => {
-      this._resetFormFeedback();
+      this.setState({ loading: false });
       this._loginFormIsValid();
     }, 500);
   }
@@ -70,7 +70,7 @@ export default class Login extends React.Component {
     this.setState({
       formIsValid: false,
       formFeedback: '',
-      loading: false,
+      loading: true,
     });
   }
 
@@ -150,7 +150,7 @@ export default class Login extends React.Component {
           {this._loginForm()}
           <div className="button-container">
             <button
-              className="btn btn-lg btn-primary login-button"
+              className="btn btn-lg btn-success login-button"
               onClick={() => this._loginButtonControl()}
             >
               {!this.state.loading && 'Login'}
